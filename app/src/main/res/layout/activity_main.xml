@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_WebView"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/main_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="欢迎使用本软件，软件可以接收系统应用安装广播，在应用安装完成时给您提示"
+            android:layout_width="match_parent"
+            android:textSize="22sp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_weight="1"
+            android:text="为了保证软件功能正常使用，请完成以下操作"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:onClick="onWhiteListSetting"
+            android:layout_weight="3"
+            android:text="设置自启动"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="onACTION_BATTERY_OPTIMIZATIONS"
+            android:layout_weight="3"
+            android:text="允许软件后台运行"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="onAppSetting"
+            android:layout_weight="3"
+            android:text="应用设置"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:onClick="onCustomize"
+                android:text="自定义"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                tools:ignore="NestedWeights" />
+
+            <Button
+                android:onClick="onPlaySound"
+                android:text="试听"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:onClick="onDefault"
+                android:text="默认"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
