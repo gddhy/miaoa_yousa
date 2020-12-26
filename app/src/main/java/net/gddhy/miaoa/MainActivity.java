@@ -37,6 +37,7 @@ public class MainActivity extends Activity {
     LinearLayout linearLayout;
     WebView webView;
     final String link = "https://gddhy.net/2020/12/26/miaoa-yousa/";
+    final String cdn_link = "https://cdn.jsdelivr.net/gh/gddhy/gddhy.github.io/2020/12/26/miaoa-yousa/";
     ProgressDialog progressDialog;
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -83,7 +84,7 @@ public class MainActivity extends Activity {
                             break;
                         default:
                     }
-                } else if(url.contains(link) && url.contains("?")){
+                } else if(url.contains(link) || url.contains(cdn_link) && url.contains("?")){
                     progressDialog.show();
                     String type = url.substring(url.lastIndexOf("?")+1);
                     String file = url.substring(0,url.lastIndexOf("?"));
