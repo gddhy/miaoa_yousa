@@ -185,7 +185,8 @@ public class MainActivity extends Activity {
     }
 
     public void onWhiteListSetting(View view) {
-        UWhiteListSetting.enterWhiteListSetting(this);
+        //UWhiteListSetting.enterWhiteListSetting(this);
+        Util.startToAutoStartSetting(this);
     }
 
     public void onACTION_BATTERY_OPTIMIZATIONS(View view) {
