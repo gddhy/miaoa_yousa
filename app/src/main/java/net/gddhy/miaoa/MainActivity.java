@@ -36,9 +36,11 @@ import java.net.URL;
 public class MainActivity extends Activity {
     LinearLayout linearLayout;
     WebView webView;
-    final String link = "https://gddhy.net/2020/12/26/miaoa-yousa/";
-    final String cdn_link = "https://cdn.jsdelivr.net/gh/gddhy/gddhy.github.io/2020/12/26/miaoa-yousa/";
+    final String link = "https://gddhy.net/2020/miaoa-yousa/";
+    final String cdn_link = "https://cdn.jsdelivr.net/gh/gddhy/gddhy.github.io/2020/miaoa-yousa/";
     ProgressDialog progressDialog;
+    LinearLayout local;
+    LinearLayout main;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -47,6 +49,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         webView = findViewById(R.id.main_WebView);
         linearLayout =findViewById(R.id.main_LinearLayout);
+        local = findViewById(R.id.local);
+        main = findViewById(R.id.main);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("加载中");
@@ -89,6 +93,8 @@ public class MainActivity extends Activity {
                     String type = url.substring(url.lastIndexOf("?")+1);
                     String file = url.substring(0,url.lastIndexOf("?"));
                     downFile(file,type.contains("set"));
+                } else if(url.contains("gddhy.net")) {
+                    view.loadUrl(url);
                 } else {
                     openUrl(url);
                 }
@@ -396,4 +402,14 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void onOnline(View view) {
+        linearLayout.setVisibility(View.GONE);
+        webView.setVisibility(View.VISIBLE);
+    }
+
+    public void onLocal(View view) {
+        webView.setVisibility(View.GONE);
+        main.setVisibility(View.GONE);
+        local.setVisibility(View.VISIBLE);
+    }
 }

@@ -26,6 +26,37 @@
             android:textSize="22sp"
             android:layout_height="wrap_content" />
 
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_weight="6"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="onOnline"
+            android:layout_weight="3"
+            android:text="在线管理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="onLocal"
+            android:layout_weight="3"
+            android:text="本地管理"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/local"
+            android:layout_weight="8"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <TextView
             android:layout_weight="1"
             android:text="为了保证软件功能正常使用，请完成以下操作"
@@ -82,6 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" />
 
+        </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
